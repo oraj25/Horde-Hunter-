@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bssgrnf86ug1p"]
+
+[ext_resource type="PackedScene" uid="uid://du1wso0i4c6vy" path="res://Sceans/bullet.tscn" id="1_h4dcj"]
+[ext_resource type="Script" path="res://Scripts/botbullet.gd" id="2_foup6"]
+[ext_resource type="Texture2D" uid="uid://coior2bgoevx6" path="res://Sprites/BotBullet.png" id="2_mvr0w"]
+
+[node name="bullet" instance=ExtResource("1_h4dcj")]
+script = ExtResource("2_foup6")
+
+[node name="Bullet1" parent="." index="0"]
+position = Vector2(-2.27374e-13, -5.68434e-14)
+rotation = 0.709679
+scale = Vector2(0.0190038, 0.0190038)
+texture = ExtResource("2_mvr0w")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(2.46382, -0.0214179)

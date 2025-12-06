@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdgfsnx5g3mnx"]
+
+[ext_resource type="PackedScene" uid="uid://dioxk5h8x7wj" path="res://Sceans/boss_one.tscn" id="1_hb7lb"]
+[ext_resource type="Script" path="res://Scripts/mini_boss_one.gd" id="2_vd2bm"]
+
+[node name="miniBossOne" instance=ExtResource("1_hb7lb")]
+scale = Vector2(0.400423, 0.400423)
+collision_mask = 4104
+script = ExtResource("2_vd2bm")
+points = 35
+
+[node name="Area2D" parent="." index="2"]
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="ProgressBar" parent="." index="4"]
+visible = false

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctaesvrmovu4u"]
+
+[ext_resource type="PackedScene" uid="uid://do3al0pwsp3lj" path="res://Powerups/life_pickup.tscn" id="1_6rrdo"]
+[ext_resource type="Script" path="res://Powerups/wall_pickup.gd" id="2_6fy42"]
+[ext_resource type="Texture2D" uid="uid://vwsvaxelrrbc" path="res://Sprites/Wall.png" id="2_qskp0"]
+
+[node name="wall_pickup" instance=ExtResource("1_6rrdo")]
+script = ExtResource("2_6fy42")
+amount = 1
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.0463338, 0.0463338)
+texture = ExtResource("2_qskp0")

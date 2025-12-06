@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://pluxi2st8wg6"]
+
+[ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_o5rrj"]
+[ext_resource type="Texture2D" uid="uid://byknsscgb2knh" path="res://Sprites/updatedZombie.png" id="2_j3po0"]
+
+[node name="zombie" type="CharacterBody2D" groups=["zombies"]]
+collision_layer = 2
+collision_mask = 4107
+script = ExtResource("1_o5rrj")
+
+[node name="Zombie" type="Sprite2D" parent="."]
+position = Vector2(-12, -1)
+scale = Vector2(0.0654297, 0.0654297)
+texture = ExtResource("2_j3po0")
+offset = Vector2(45.8506, 30.5671)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-12, 1)
+polygon = PackedVector2Array(-20, -8, -5, -24, 24, -24, 24, -17, 24, -9, 24, 0, 24, 16, 24, 22, -5, 22, -20, 6)

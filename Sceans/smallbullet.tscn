@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf7i722p0wfeb"]
+
+[ext_resource type="Script" path="res://Scripts/smallbullet.gd" id="1_a5cdr"]
+[ext_resource type="Texture2D" uid="uid://dss2prjmfiy1n" path="res://Sprites/sbullet.png" id="2_kqwmc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tm7fe"]
+radius = 4.23952
+height = 15.5991
+
+[node name="bullet" type="Area2D"]
+top_level = true
+rotation = 0.794091
+scale = Vector2(0.373829, 0.373829)
+collision_mask = 3
+script = ExtResource("1_a5cdr")
+
+[node name="Bullet1" type="Sprite2D" parent="."]
+position = Vector2(-0.700933, 0.713227)
+rotation = 0.162135
+scale = Vector2(0.0571606, 0.0571606)
+texture = ExtResource("2_kqwmc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.54155, 0.676347)
+rotation = 1.60044
+shape = SubResource("CapsuleShape2D_tm7fe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

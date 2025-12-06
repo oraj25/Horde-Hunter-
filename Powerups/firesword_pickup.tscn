@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqq5g40rxokg0"]
+
+[ext_resource type="Texture2D" uid="uid://b6d3wixs25kxe" path="res://Sprites/FireSword.png" id="1_77jv1"]
+[ext_resource type="Script" path="res://Powerups/firesword_pickup.gd" id="1_rk7rs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv4kq"]
+
+[node name="Firesword_pickup" type="Area2D"]
+scale = Vector2(1.75436, 1.75436)
+collision_mask = 8
+script = ExtResource("1_rk7rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rv4kq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.045705, 0.045705)
+texture = ExtResource("1_77jv1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://do3al0pwsp3lj"]
+
+[ext_resource type="PackedScene" uid="uid://bqq5g40rxokg0" path="res://Powerups/firesword_pickup.tscn" id="1_e5fmp"]
+[ext_resource type="Texture2D" uid="uid://d0hlecfwcnhsc" path="res://Sprites/Life.png" id="2_oyln1"]
+[ext_resource type="Script" path="res://Powerups/life_pickup.gd" id="2_p7ymy"]
+
+[node name="Life_pickup" instance=ExtResource("1_e5fmp")]
+script = ExtResource("2_p7ymy")
+heal_amount = 20
+despawn_time = 60.0
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.0226771, 0.0226771)
+texture = ExtResource("2_oyln1")

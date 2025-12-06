@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdsk7b03lu1v"]
+
+[ext_resource type="Script" path="res://Scripts/zbullet.gd" id="1_p653b"]
+[ext_resource type="Texture2D" uid="uid://b7qugs38ske4l" path="res://Sprites/zBullet.png" id="2_tsrfs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3kcl5"]
+radius = 78.345
+height = 196.713
+
+[node name="Zbullet" type="Area2D"]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_p653b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.00512806
+scale = Vector2(0.0310445, 0.0310445)
+texture = ExtResource("2_tsrfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 4.61853e-14)
+rotation = 1.5728
+scale = Vector2(0.102112, 0.111817)
+shape = SubResource("CapsuleShape2D_3kcl5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

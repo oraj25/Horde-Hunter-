@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpjiw850vfvky"]
+
+[ext_resource type="PackedScene" uid="uid://c418notlu2xds" path="res://Sceans/FireSword.tscn" id="1_1s06p"]
+[ext_resource type="Texture2D" uid="uid://fuoqhagskqv" path="res://Sprites/final_sword.png" id="2_1o2bp"]
+[ext_resource type="Script" path="res://Scripts/zsword.gd" id="2_exrt4"]
+
+[node name="Zsword" instance=ExtResource("1_1s06p")]
+script = ExtResource("2_exrt4")
+rotation_speed = 2.5
+damage = 50
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(3, -69)
+rotation = 1.95743
+scale = Vector2(0.108702, 0.0981221)
+texture = ExtResource("2_1o2bp")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(2, -85)
+rotation = 0.0568109

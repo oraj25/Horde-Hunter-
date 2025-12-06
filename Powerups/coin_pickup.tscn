@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://jptuv3ysg1bg"]
+
+[ext_resource type="PackedScene" uid="uid://bqq5g40rxokg0" path="res://Powerups/firesword_pickup.tscn" id="1_hdts7"]
+[ext_resource type="Texture2D" uid="uid://cqdaccbsdsa6q" path="res://Sprites/coin.png" id="2_0gne1"]
+[ext_resource type="Script" path="res://Powerups/coin_pickup.gd" id="2_342rq"]
+
+[node name="coin_pickup" instance=ExtResource("1_hdts7")]
+script = ExtResource("2_342rq")
+value = 1
+despawn_time = 60.0
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.0182538, 0.0182538)
+texture = ExtResource("2_0gne1")

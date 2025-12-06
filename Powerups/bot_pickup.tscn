@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://clcid733xo846"]
+
+[ext_resource type="PackedScene" uid="uid://bsahegglltprj" path="res://Powerups/autogun_pickup.tscn" id="1_axnyy"]
+[ext_resource type="Script" path="res://Powerups/bot_pickup.gd" id="2_ey04v"]
+[ext_resource type="Texture2D" uid="uid://b1hte8aqny7y8" path="res://Sprites/alley.png" id="2_k3bqx"]
+
+[node name="BOT_pickup" instance=ExtResource("1_axnyy")]
+script = ExtResource("2_ey04v")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-1.90735e-06, 1.90735e-06)
+scale = Vector2(0.0189236, 0.0189236)
+texture = ExtResource("2_k3bqx")

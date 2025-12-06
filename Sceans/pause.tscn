@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://wachts0n7es1"]
+
+[ext_resource type="PackedScene" uid="uid://rmstpehd6vdo" path="res://Sceans/game_over.tscn" id="1_tygdt"]
+[ext_resource type="FontFile" uid="uid://bf1ne6btwk2cn" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_gdf0x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gbwt"]
+bg_color = Color(0, 0.309804, 0.14902, 0)
+border_color = Color(0.0160474, 0.358327, 0.0634941, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="pause" instance=ExtResource("1_tygdt")]
+
+[node name="Panel" parent="." index="1"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_0gbwt")
+
+[node name="Label" parent="Panel" index="0"]
+offset_left = -43.0
+offset_top = 7.0
+offset_right = 203.0
+offset_bottom = 45.0
+scale = Vector2(0.349478, 0.349478)
+theme_override_fonts/font = ExtResource("2_gdf0x")
+text = "Waiting......."
+
+[node name="HighScore" parent="Panel" index="1"]
+offset_left = -9.31804
+offset_top = 16.682
+offset_right = 56.682
+offset_bottom = 39.682
+scale = Vector2(0.280347, 0.280347)
+text = "press Esc to resume"
+
+[node name="Score" parent="Panel" index="2"]
+visible = false
+
+[node name="retry" parent="Panel" index="3"]
+visible = false
+disabled = true
+
+[node name="menu" parent="Panel" index="4"]
+visible = false
+disabled = true

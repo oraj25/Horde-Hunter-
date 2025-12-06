@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhfth0eh3aftr"]
+
+[ext_resource type="Texture2D" uid="uid://bqqy57b1socnl" path="res://Sprites/Player.png" id="1_j3lge"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_qi8yc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jq0vx"]
+radius = 24.9989
+height = 70.0022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_am6m7"]
+radius = 19.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qi8yc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.77626e-21, 1)
+scale = Vector2(0.0467529, 0.0467529)
+texture = ExtResource("1_j3lge")
+
+[node name="gun" type="Marker2D" parent="Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(770.006, -21.389)
+
+[node name="full player" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 1.19209e-07)
+rotation = 1.57029
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_jq0vx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="life" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="life"]
+position = Vector2(-23, 0)
+shape = SubResource("CircleShape2D_am6m7")
+debug_color = Color(0.767031, 0, 0.183501, 0.42)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

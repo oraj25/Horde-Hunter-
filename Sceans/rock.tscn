@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b30q7f41nh2yc"]
+
+[ext_resource type="Texture2D" uid="uid://cluxddom5r70" path="res://Sprites/rock1.png" id="1_rqebt"]
+
+[node name="Tree" type="StaticBody2D"]
+position = Vector2(0, -7)
+
+[node name="Rock1" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.419944, 0.427083)
+texture = ExtResource("1_rqebt")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-18, 5, -13, -7, -13, -8, -1, -15, 15, -7, 9, 8, -7, 6, -11, 12)

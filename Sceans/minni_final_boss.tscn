@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7mdlmnoy6ndp"]
+
+[ext_resource type="PackedScene" uid="uid://ccnaec1idviwi" path="res://Sceans/final_boss.tscn" id="1_422dj"]
+[ext_resource type="Script" path="res://Scripts/minni_final_boss.gd" id="2_imag0"]
+
+[node name="Minni_Final_boss" instance=ExtResource("1_422dj")]
+scale = Vector2(0.494964, 0.494964)
+collision_mask = 4104
+script = ExtResource("2_imag0")
+points = 35
+
+[node name="ProgressBar" parent="." index="1"]
+visible = false

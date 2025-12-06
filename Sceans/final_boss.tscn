@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccnaec1idviwi"]
+
+[ext_resource type="Script" path="res://Scripts/final_boss.gd" id="1_50hqw"]
+[ext_resource type="Texture2D" uid="uid://baivrrj0aw76k" path="res://Sprites/final_zombie.png" id="1_hdf4l"]
+[ext_resource type="PackedScene" uid="uid://cyiewfm4ithju" path="res://Sceans/z_auto_gun.tscn" id="2_86sb4"]
+[ext_resource type="PackedScene" uid="uid://cpjiw850vfvky" path="res://Sceans/zsword.tscn" id="3_k5baq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4le8t"]
+bg_color = Color(0.560688, 0, 0.12722, 0.796078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ayxi"]
+bg_color = Color(0.948871, 0, 0.290978, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ah6na"]
+radius = 91.7878
+
+[node name="Final_boss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_50hqw")
+
+[node name="spawner" type="Timer" parent="." groups=["final_boss"]]
+wait_time = 20.0
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -118.0
+offset_top = -121.0
+offset_right = -114.0
+offset_bottom = -94.0
+scale = Vector2(59.1117, 0.238418)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_4le8t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7ayxi")
+value = 100.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 3.8147e-06)
+scale = Vector2(0.205273, 0.205273)
+texture = ExtResource("1_hdf4l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ah6na")
+
+[node name="ZAutoGun" parent="." instance=ExtResource("2_86sb4")]
+position = Vector2(-83, 68)
+scale = Vector2(0.629511, 0.629511)
+
+[node name="Zsword" parent="." instance=ExtResource("3_k5baq")]
+position = Vector2(81, 48)
+scale = Vector2(1.7822, 1.7822)
+
+[node name="spawn_point" type="Marker2D" parent="."]
+
+[connection signal="timeout" from="spawner" to="." method="_on_spawner_timeout"]

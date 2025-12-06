@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5mva573yx6eh"]
+
+[ext_resource type="PackedScene" uid="uid://c418notlu2xds" path="res://Sceans/FireSword.tscn" id="1_ymy7c"]
+[ext_resource type="Script" path="res://Scripts/firesword_player.gd" id="2_kcjgg"]
+
+[node name="Firesword_Player" instance=ExtResource("1_ymy7c")]
+script = ExtResource("2_kcjgg")
+damage = 10

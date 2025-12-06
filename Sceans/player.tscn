@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhfth0eh3aftr"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_qi8yc"]
+[ext_resource type="PackedScene" uid="uid://6lyutvmjnelq" path="res://Sceans/gun.tscn" id="2_3bnpr"]
+[ext_resource type="Texture2D" uid="uid://kroj8yuiqbx" path="res://Sprites/shield.png" id="2_6wtrv"]
+[ext_resource type="Texture2D" uid="uid://cl2au0uw3y10o" path="res://Sprites/FPlayer.png" id="2_ugydt"]
+[ext_resource type="PackedScene" uid="uid://c5mva573yx6eh" path="res://Sceans/firesword_player.tscn" id="4_6fhh7"]
+[ext_resource type="PackedScene" uid="uid://cyvly8bmx6p8n" path="res://Sceans/Autogun.tscn" id="4_120nd"]
+[ext_resource type="PackedScene" uid="uid://do3fd8upeorap" path="res://Sceans/bots.tscn" id="7_ty5v4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jq0vx"]
+radius = 19.2181
+height = 38.4362
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jnxb"]
+radius = 49.4924
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8gsw"]
+bg_color = Color(0.25548, 0, 0.0782235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7gw6"]
+bg_color = Color(0.999999, 0.183116, 0.2243, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D" groups=["players"]]
+scale = Vector2(0.92779, 0.92779)
+collision_layer = 8
+collision_mask = 195
+script = ExtResource("1_qi8yc")
+
+[node name="Shield" type="Sprite2D" parent="."]
+scale = Vector2(0.0859621, 0.0859621)
+texture = ExtResource("2_6wtrv")
+
+[node name="full_player" type="CollisionShape2D" parent="."]
+position = Vector2(-1.07783, 0)
+rotation = 3.12817
+scale = Vector2(0.996856, 0.999908)
+shape = SubResource("CapsuleShape2D_jq0vx")
+
+[node name="life" type="Area2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(-0.752749, -0.747703)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="life"]
+rotation = 3.1364
+scale = Vector2(0.555875, 0.557846)
+shape = SubResource("CircleShape2D_0jnxb")
+debug_color = Color(0.767031, 0, 0.183501, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -19.0
+offset_top = -33.0
+offset_right = 23.0
+offset_bottom = -28.0
+scale = Vector2(0.902406, 0.736689)
+theme_override_font_sizes/font_size = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_d8gsw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e7gw6")
+value = 100.0
+show_percentage = false
+
+[node name="Gun" parent="." instance=ExtResource("2_3bnpr")]
+collision_mask = 3
+
+[node name="AutoGun" parent="." instance=ExtResource("4_120nd")]
+
+[node name="Firesword_Player" parent="." instance=ExtResource("4_6fhh7")]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(0.858454, 0.858454)
+collision_mask = 2
+damage = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.70996, -0.70996)
+scale = Vector2(0.0858764, 0.0858764)
+texture = ExtResource("2_ugydt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="Bots" parent="." instance=ExtResource("7_ty5v4")]
+scale = Vector2(0.374779, 0.374779)

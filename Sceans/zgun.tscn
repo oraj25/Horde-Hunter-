@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv4aahlyuu8yy"]
+
+[ext_resource type="Script" path="res://Scripts/zgun.gd" id="1_1crlg"]
+[ext_resource type="Texture2D" uid="uid://b10epyf5iwxqs" path="res://Sprites/Zgun.png" id="1_5wkdp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vk40"]
+radius = 21.6579
+
+[node name="Zgun" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_1crlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(51.5761, 51.5761)
+shape = SubResource("CircleShape2D_4vk40")
+
+[node name="pivot" type="Marker2D" parent="."]
+
+[node name="Zgun" type="Sprite2D" parent="pivot"]
+position = Vector2(156, 7)
+scale = Vector2(0.220195, 0.216346)
+texture = ExtResource("1_5wkdp")
+
+[node name="ShootPoint" type="Marker2D" parent="pivot/Zgun"]
+position = Vector2(454.143, -46.2222)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

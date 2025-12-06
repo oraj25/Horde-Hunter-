@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://dioxk5h8x7wj"]
+
+[ext_resource type="Script" path="res://Scripts/boss_one.gd" id="1_ta6lu"]
+[ext_resource type="Texture2D" uid="uid://dprl4pjq232to" path="res://Sprites/boss.png" id="1_vii37"]
+[ext_resource type="PackedScene" uid="uid://dv4aahlyuu8yy" path="res://Sceans/zgun.tscn" id="2_3k026"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ytftk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ckj5h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nudu"]
+bg_color = Color(1, 0.151359, 0.258499, 0.388235)
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peyxv"]
+bg_color = Color(0.102856, 0.504828, 0.173023, 1)
+border_width_left = 1
+border_width_right = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="bossOne" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_ta6lu")
+
+[node name="Zboss" type="Sprite2D" parent="."]
+scale = Vector2(0.349197, 0.349197)
+texture = ExtResource("1_vii37")
+
+[node name="Zlife" type="CollisionShape2D" parent="."]
+scale = Vector2(-12.1502, -13.3459)
+shape = SubResource("CircleShape2D_ytftk")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -3.14159
+scale = Vector2(125.869, 138.08)
+shape = SubResource("CircleShape2D_ckj5h")
+debug_color = Color(0.941956, 0.185105, 0.399029, 0.42)
+
+[node name="Zgun" parent="." groups=["bosses"] instance=ExtResource("2_3k026")]
+position = Vector2(-4, 0)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -85.0
+offset_top = -134.0
+offset_right = -55.0
+offset_bottom = -133.0
+rotation = -0.000855327
+scale = Vector2(5.68597, 7.15511)
+theme_override_styles/background = SubResource("StyleBoxFlat_7nudu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_peyxv")
+value = 100.0
+show_percentage = false
+
+[connection signal="ready" from="." to="." method="_on_ready"]

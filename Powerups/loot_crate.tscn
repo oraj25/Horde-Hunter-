@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dynapec70qtwl"]
+
+[ext_resource type="Script" path="res://Powerups/loot_crate.gd" id="1_d2qj3"]
+[ext_resource type="Texture2D" uid="uid://dvuovlhspqepv" path="res://Sprites/loot.png" id="1_eixuv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6eq6"]
+size = Vector2(34, 20)
+
+[node name="LootCrate" type="CharacterBody2D" groups=["loot"]]
+scale = Vector2(2.06883, 2.06883)
+collision_layer = 2
+collision_mask = 75
+script = ExtResource("1_d2qj3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.033348, 0.033348)
+texture = ExtResource("1_eixuv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w6eq6")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs78bugx5ocmo"]
+
+[ext_resource type="Texture2D" uid="uid://csata7pjqhg8f" path="res://Sprites/tree_small.png" id="1_c2csg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnhoa"]
+radius = 45.0999
+
+[node name="Tree" type="StaticBody2D"]
+position = Vector2(0, -7)
+
+[node name="TreeSmall" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.595745, 0.595745)
+texture = ExtResource("1_c2csg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rnhoa")

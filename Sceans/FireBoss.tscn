@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce6ptwtaiw2hs"]
+
+[ext_resource type="Texture2D" uid="uid://bpkaguf225b0v" path="res://Sprites/fireBoss.png" id="1_udj81"]
+[ext_resource type="Script" path="res://Scripts/fire_boss.gd" id="1_x4ovu"]
+[ext_resource type="PackedScene" uid="uid://c418notlu2xds" path="res://Sceans/FireSword.tscn" id="2_ud1wq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o1omg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx00l"]
+bg_color = Color(0.329412, 0.113725, 0, 0.729412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7uyp"]
+bg_color = Color(0.956152, 0.412074, 0, 1)
+border_color = Color(1, 1, 1, 1)
+
+[node name="fireboss" type="CharacterBody2D" groups=["boss_fire"]]
+scale = Vector2(2.09466, 2.09466)
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_x4ovu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.167969, 0.167969)
+texture = ExtResource("1_udj81")
+
+[node name="Firelife" type="CollisionShape2D" parent="."]
+scale = Vector2(5.18541, 5.16616)
+shape = SubResource("CircleShape2D_o1omg")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -46.0
+offset_top = -75.0
+offset_right = -42.0
+offset_bottom = -48.0
+scale = Vector2(23.0659, 0.126671)
+theme_override_styles/background = SubResource("StyleBoxFlat_lx00l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p7uyp")
+value = 100.0
+show_percentage = false
+
+[node name="Firesword" parent="." instance=ExtResource("2_ud1wq")]
+position = Vector2(0, -7)
+scale = Vector2(1.63518, 1.63518)

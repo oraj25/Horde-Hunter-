@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://csl8udv0v4wfn"]
+
+[ext_resource type="Script" path="res://Scripts/next_wave_ui.gd" id="1_4bn2x"]
+
+[sub_resource type="SystemFont" id="SystemFont_pyt4g"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_dwibc"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
+[sub_resource type="SystemFont" id="SystemFont_0q4lk"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+multichannel_signed_distance_field = true
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 2.0
+offset_right = 84.0
+offset_bottom = 117.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_4bn2x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.317647)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="next_wave" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_pyt4g")
+theme_override_font_sizes/font_size = 32
+text = "Next wave"
+
+[node name="seperator" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ready" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_dwibc")
+action_mode = 0
+text = "Ready"
+
+[node name="save" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_0q4lk")
+text = "Save"
+
+[connection signal="save_game_pressed" from="." to="." method="_on_save_game_pressed"]
+[connection signal="start_next_wave" from="." to="." method="_on_start_next_wave"]

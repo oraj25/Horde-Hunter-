@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsahegglltprj"]
+
+[ext_resource type="Script" path="res://Powerups/autogun_pickup.gd" id="1_tjjj8"]
+[ext_resource type="Texture2D" uid="uid://cjhsq74lvjyh3" path="res://Sprites/gun.png" id="2_mt2ny"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wllhd"]
+
+[node name="Autogun" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_tjjj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wllhd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.27374e-13, 2.27374e-13)
+scale = Vector2(0.0472222, 0.0472222)
+texture = ExtResource("2_mt2ny")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

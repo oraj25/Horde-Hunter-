@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cibcq7ad3ooui"]
+
+[ext_resource type="PackedScene" uid="uid://do3al0pwsp3lj" path="res://Powerups/life_pickup.tscn" id="1_0vl1c"]
+[ext_resource type="Texture2D" uid="uid://kroj8yuiqbx" path="res://Sprites/shield.png" id="2_6ne58"]
+[ext_resource type="Script" path="res://Powerups/shield_pickup.gd" id="2_s13hd"]
+
+[node name="Shield_pickup" instance=ExtResource("1_0vl1c")]
+collision_layer = 0
+script = ExtResource("2_s13hd")
+shieldTime = 30.0
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.0161354, 0.0161354)
+texture = ExtResource("2_6ne58")
