@@ -1,0 +1,193 @@
+[gd_scene load_steps=40 format=3 uid="uid://bad47purhr5hp"]
+
+[ext_resource type="Script" path="res://Audio/audio_controller.gd" id="1_d3o5h"]
+[ext_resource type="AudioStream" uid="uid://yxkrxcvo5vhn" path="res://Audio/main.mp3" id="2_56m7k"]
+[ext_resource type="AudioStream" uid="uid://b2kpf8i0fu3o3" path="res://Audio/gameBg.mp3" id="2_pbaiw"]
+[ext_resource type="AudioStream" uid="uid://cvgpd58s7otag" path="res://Audio/click.wav" id="2_yiu1d"]
+[ext_resource type="AudioStream" uid="uid://bhma01lm0inrk" path="res://Audio/Quirky Boss Loop.ogg" id="3_wgrbw"]
+[ext_resource type="AudioStream" uid="uid://c5s05striaiyt" path="res://Audio/Start.mp3" id="5_736w5"]
+[ext_resource type="AudioStream" uid="uid://l4mxxjckicm1" path="res://Audio/znormal.mp3" id="6_iyncv"]
+[ext_resource type="AudioStream" uid="uid://cjg3enpqc02w5" path="res://Audio/zboss.mp3" id="7_23v6y"]
+[ext_resource type="AudioStream" uid="uid://c6f5sn5khcry3" path="res://Audio/ZombieReact.wav" id="8_aay8w"]
+[ext_resource type="AudioStream" uid="uid://bfirwllwwix33" path="res://Audio/explosion.wav" id="10_32nhh"]
+[ext_resource type="AudioStream" uid="uid://b5emld6pd7pbi" path="res://Audio/ZombieDead.wav" id="11_ax2yr"]
+[ext_resource type="AudioStream" uid="uid://blvhyaaybsk3m" path="res://Audio/energy-3-107098.mp3" id="11_ofvnh"]
+[ext_resource type="AudioStream" uid="uid://du3ic2nqd5eui" path="res://Audio/bye-bye_Ua5VOTV.mp3" id="11_p5rtv"]
+[ext_resource type="AudioStream" uid="uid://cope6aj2wione" path="res://Audio/turning-down-power-48657.mp3" id="12_t4epo"]
+[ext_resource type="AudioStream" uid="uid://djj33g0u0ojt6" path="res://Audio/pick-up-sfx-38516.mp3" id="13_d4vio"]
+[ext_resource type="AudioStream" uid="uid://8t2rmkrgvnie" path="res://Audio/damage.mp3" id="14_gwcvb"]
+[ext_resource type="AudioStream" uid="uid://cc2dvss0oy2o5" path="res://Audio/pickupCoin.wav" id="16_2tr0e"]
+[ext_resource type="AudioStream" uid="uid://v3hmtpqjqay1" path="res://Audio/game-over-v2-0.mp3" id="16_rp8vl"]
+[ext_resource type="AudioStream" uid="uid://dw7hj7nyw114q" path="res://Audio/powerUp.wav" id="17_ee2x6"]
+[ext_resource type="AudioStream" uid="uid://dw3ywt0op1qfi" path="res://Audio/sword.mp3" id="18_gpl0s"]
+[ext_resource type="AudioStream" uid="uid://djtis2r8mwpok" path="res://Audio/zombie-hunter_shoot.mp3" id="19_j45yn"]
+[ext_resource type="AudioStream" uid="uid://b3o1vims72ld3" path="res://Audio/laserShoot.wav" id="20_8umxv"]
+[ext_resource type="AudioStream" uid="uid://qp27ab1grwe0" path="res://Audio/laserShoot(1).wav" id="20_8yfan"]
+[ext_resource type="AudioStream" uid="uid://ntb6wvr1ryt4" path="res://Audio/laserShoot(2).wav" id="21_l6muu"]
+[ext_resource type="AudioStream" uid="uid://b4vfdalomygr3" path="res://Audio/imp-pvz.mp3" id="23_r1t5k"]
+[ext_resource type="AudioStream" uid="uid://biv1mde0wan5h" path="res://Audio/loot.mp3" id="25_nlviv"]
+[ext_resource type="AudioStream" uid="uid://48261acp7b7l" path="res://Audio/save (1).mp3" id="26_7acr6"]
+[ext_resource type="AudioStream" uid="uid://b3loourm36ioe" path="res://Audio/save (2).mp3" id="27_w3cyx"]
+[ext_resource type="AudioStream" uid="uid://dg63wk8q10byx" path="res://Audio/save (3).mp3" id="28_j5lg8"]
+[ext_resource type="AudioStream" uid="uid://ctpyy3kgd8wii" path="res://Audio/save (4).mp3" id="29_do04y"]
+[ext_resource type="AudioStream" uid="uid://bl7t1pctfp2c3" path="res://Audio/save (5).mp3" id="30_42h5c"]
+[ext_resource type="AudioStream" uid="uid://b0bwim3ujn41c" path="res://Audio/save (6).mp3" id="31_id3nc"]
+[ext_resource type="AudioStream" uid="uid://caip3sssf4sj3" path="res://Audio/save (7).mp3" id="32_o28ds"]
+[ext_resource type="AudioStream" uid="uid://x6mb8nignbta" path="res://Audio/save (8).mp3" id="33_tug81"]
+[ext_resource type="AudioStream" uid="uid://dihi3ekes2qta" path="res://Audio/save (9).mp3" id="34_ywcbd"]
+[ext_resource type="AudioStream" uid="uid://ddlltipo65v1q" path="res://Audio/save (10).mp3" id="35_r27a6"]
+[ext_resource type="AudioStream" uid="uid://cqhcfks1dnku1" path="res://Audio/levelup.wav" id="36_0rn3i"]
+[ext_resource type="AudioStream" uid="uid://di362ks6tdksl" path="res://Audio/wallpickup.mp3" id="37_j1p3a"]
+[ext_resource type="AudioStream" uid="uid://c14q5ovkwjey6" path="res://Audio/wallPlace.mp3" id="38_0wqa8"]
+
+[node name="AudioController" type="Node2D"]
+script = ExtResource("1_d3o5h")
+
+[node name="gameBg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pbaiw")
+volume_db = -25.0
+
+[node name="bossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wgrbw")
+
+[node name="main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_56m7k")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yiu1d")
+
+[node name="start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_736w5")
+volume_db = -5.0
+
+[node name="Zidol" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_iyncv")
+volume_db = -20.0
+
+[node name="Zboss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_23v6y")
+volume_db = -5.0
+
+[node name="Zdamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_aay8w")
+volume_db = -10.0
+
+[node name="Zdead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_32nhh")
+volume_db = -5.0
+
+[node name="Zbossdead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ax2yr")
+volume_db = -5.0
+
+[node name="Zbossbigdead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_p5rtv")
+volume_db = -5.0
+
+[node name="powerup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ofvnh")
+volume_db = -5.0
+
+[node name="powerdown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_t4epo")
+volume_db = -5.0
+
+[node name="healthup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_d4vio")
+volume_db = -5.0
+
+[node name="Pdamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_gwcvb")
+volume_db = -5.0
+
+[node name="Pdead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_rp8vl")
+volume_db = -5.0
+
+[node name="coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_2tr0e")
+volume_db = -5.0
+
+[node name="newwepon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ee2x6")
+volume_db = -5.0
+
+[node name="Sward" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_gpl0s")
+volume_db = -5.0
+
+[node name="pBullet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_j45yn")
+volume_db = -5.0
+
+[node name="pBullet2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_8umxv")
+volume_db = -5.0
+
+[node name="pBullet3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_l6muu")
+volume_db = -10.0
+
+[node name="ZBullet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_8yfan")
+volume_db = -5.0
+
+[node name="minion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_r1t5k")
+volume_db = -5.0
+
+[node name="loot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_nlviv")
+volume_db = -5.0
+
+[node name="save" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_7acr6")
+volume_db = -5.0
+
+[node name="save2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_w3cyx")
+volume_db = -5.0
+
+[node name="save3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_j5lg8")
+volume_db = -5.0
+
+[node name="save4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_do04y")
+volume_db = -5.0
+
+[node name="save5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_42h5c")
+volume_db = -5.0
+
+[node name="save6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_id3nc")
+volume_db = -5.0
+
+[node name="save7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_o28ds")
+volume_db = -5.0
+
+[node name="save8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_tug81")
+volume_db = -5.0
+
+[node name="save9" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_ywcbd")
+volume_db = -5.0
+
+[node name="save10" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_r27a6")
+volume_db = -5.0
+
+[node name="levelup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_0rn3i")
+volume_db = -5.0
+
+[node name="wallpickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_j1p3a")
+volume_db = -5.0
+
+[node name="wallPlace" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_0wqa8")
+volume_db = -5.0

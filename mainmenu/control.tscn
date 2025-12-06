@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://ekm1oj8a81px"]
+
+[ext_resource type="PackedScene" uid="uid://cm0cnckh1gh8o" path="res://mainmenu/main_menu.tscn" id="1_xxpcv"]
+[ext_resource type="Script" path="res://mainmenu/control.gd" id="2_kge3f"]
+
+[sub_resource type="SystemFont" id="SystemFont_recla"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="LabelSettings" id="LabelSettings_eq0og"]
+font = SubResource("SystemFont_recla")
+font_size = 64
+
+[sub_resource type="SystemFont" id="SystemFont_qqspb"]
+font_names = PackedStringArray("Impact")
+
+[node name="Control" instance=ExtResource("1_xxpcv")]
+script = ExtResource("2_kge3f")
+
+[node name="move" type="Label" parent="MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Move - [A,S,D,W]/ [Arrow-up, down,left,right]"
+label_settings = SubResource("LabelSettings_eq0og")
+
+[node name="Shoot" type="Label" parent="MarginContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Shoot - Space"
+label_settings = SubResource("LabelSettings_eq0og")
+
+[node name="Build" type="Label" parent="MarginContainer/VBoxContainer" index="3"]
+layout_mode = 2
+text = "Build  - E"
+label_settings = SubResource("LabelSettings_eq0og")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Return" type="Button" parent="MarginContainer/HBoxContainer2/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = SubResource("SystemFont_qqspb")
+theme_override_font_sizes/font_size = 32
+text = "Return"
+
+[node name="HBoxContainer" parent="MarginContainer" index="2"]
+visible = false
+
+[node name="Start" parent="MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+disabled = true
+text = "Move"
+
+[node name="Continue" parent="MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+disabled = true
+
+[node name="Controls" parent="MarginContainer/HBoxContainer/VBoxContainer" index="3"]
+disabled = true
+
+[node name="Exit" parent="MarginContainer/HBoxContainer/VBoxContainer" index="4"]
+disabled = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer2/VBoxContainer/Return" to="." method="_on_return_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhma01lm0inrk"
+path="res://.godot/imported/Quirky Boss Loop.ogg-4e3ac32ce02a6ed45bb786b5dd417008.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Quirky Boss Loop.ogg"
+dest_files=["res://.godot/imported/Quirky Boss Loop.ogg-4e3ac32ce02a6ed45bb786b5dd417008.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

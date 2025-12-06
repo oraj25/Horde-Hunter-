@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x6mb8nignbta"
+path="res://.godot/imported/save (8).mp3-c0123098190a2e1229b5c7714e0e42f0.mp3str"
+
+[deps]
+
+source_file="res://Audio/save (8).mp3"
+dest_files=["res://.godot/imported/save (8).mp3-c0123098190a2e1229b5c7714e0e42f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
